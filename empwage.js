@@ -35,3 +35,19 @@ while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
 }
 let empWage = totalEmpHrs * WAGE_PER_HOUR;
 console.log("Total Days : " +totalWorkingDays + " Total hours : " +totalEmpHrs+ " Emp Wage : " +empWage);
+
+
+
+let totalEmpWage = 0;
+function sum(dailyWage){
+	totalEmpWage += dailyWage;
+}
+
+empDailyWageArr.forEach(sum);
+console.log("Total Days: "+ totalWorkingDays +
+            " Total Hrs: " + totalEmpHrs + " Emp Wage: " + totalEmpWage);
+
+function totalWages(totalWage, dailyWage){
+	return totalWage + dailyWage;
+}
+console.log("Emp Wage with reduce " +empDailyWageArr.reduce(totalWages,0));
